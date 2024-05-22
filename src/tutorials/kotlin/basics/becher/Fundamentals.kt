@@ -152,8 +152,23 @@ fun main(args: Array<String>) {
     // Custom Generic
     var customGeneric = CustomGeneric<String ,Int ,Shape, Shape>("Hello", 1, circle, rect1)
     customGeneric.printTypes()
+
+    // to check instance of object
+    // instanceOf equivalent in java is `is` and `!is`
+    val someShapeObject: Any = parallelogram
+    if (someShapeObject is Shape) {
+//        val newShape = someShapeObject as Shape
+        println(someShapeObject.name)
+        println("Shape ${someShapeObject.name}")
+        println("Shape \${someShapeObject.name}")
+        println("Shape $${someShapeObject.name}")
+    }
 }
 
 fun helloWorld() {
     println("Hello world!")
+}
+
+fun typeAliasGetShapeList() : ShapeList {
+    return listOf()
 }
